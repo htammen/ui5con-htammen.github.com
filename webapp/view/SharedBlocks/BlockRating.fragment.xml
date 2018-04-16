@@ -1,0 +1,18 @@
+<forms:SimpleForm xmlns:forms="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+		labelSpanL="4"
+		labelSpanM="4"
+		labelSpanS="4"
+		emptySpanL="0"
+		emptySpanM="0"
+		emptySpanS="0"
+		maxContainerCols="2" layout="ResponsiveLayout"
+		width="100%">
+	<l:Grid content="{model>}" defaultSpan="L3 M6 S12">
+		<l:content>
+			<VBox alignItems="Start">
+				<Label id="lblName" class="sapUiSmallMarginEnd" text="{model>Name}" design="{path:'model>Rating', formatter:'.formatLabel'}"/>
+				<RatingIndicator id="ratingIndicator" enabled="false" value="{model>Rating}" visible="{= ${Type} === 'emphasize' ? false : true}"/>
+			</VBox>
+		</l:content>
+	</l:Grid>	
+</forms:SimpleForm>

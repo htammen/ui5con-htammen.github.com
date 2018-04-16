@@ -1,0 +1,28 @@
+{
+	"pdfs": [
+		{
+			"name": "personalized",
+			"note": "Personalized CV / profile",
+			"anonymous": false,
+			"url": "http://tammen-it-solutions.de/wp-content/uploads/2015/06/profil_ht.pdf"
+		},
+		{
+			"name": "anonymous",
+			"note": "Anonymous CV / profile without personal data",
+			"anonymous": true,
+			"url": "http://tammen-it-solutions.de/wp-content/uploads/2015/06/profil_anonym_ht.pdf"
+		},
+		{
+			"name": "abstract",
+			"note": "Abstract of activities of the last few years",
+			"anonymous": false,
+			"url": "http://tammen-it-solutions.de/wp-content/uploads/2016/01/Beraterprofil_abstract_ht.pdf"
+		},
+		{
+			"name": "abstract anonymous",
+			"note": "Abstract of activities of the last few years",
+			"anonymous": true,
+			"url": "http://tammen-it-solutions.de/wp-content/uploads/2016/10/Beraterprofil_abstract_ht_anonym.pdf"
+		}
+	]
+}

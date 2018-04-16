@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:p="com.penninkhof.controls" >
+	<Popover title="{i18n>qrCodeTitle}" class="sapUiContentPadding" placement="Auto" showHeader="true">
+		<subHeader>
+			<Bar>
+				<contentMiddle>
+					<Text text="{i18n>qrCodeSubHeader}" wrapping="true" width="200px"/>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+			<HBox justifyContent="Center">
+				<p:QRCode code="{viewModel>/qrCode}" width="200px"/>
+			</HBox>
+		</content>
+		<endButton>
+			<Button text="{i18n>dialogClose}" press="onDialogClose"/>
+		</endButton>
+	</Popover>
+	<!--
+		<Dialog title="{i18n>qrCodeTitle}">
+			<subHeader>
+				<Bar>
+					<contentMiddle>
+						<Text text="{i18n>qrCodeSubHeader}"/>
+					</contentMiddle>
+				</Bar>
+			</subHeader>
+			<p:QRCode code="{viewModel>/qrCode}" width="400px" height="400px" />
+			<buttons>
+				<Button text="{i18n>dialogClose}" press="onDialogClose"/>
+			</buttons>
+		</Dialog>
+	-->
+</core:FragmentDefinition>

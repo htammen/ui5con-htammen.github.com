@@ -1,0 +1,26 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+		  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+		  xmlns:commons="sap.ui.commons" xmlns="sap.m"
+		  controllerName="de.tammenit.ui5.homepage.controller.SharedBlocks.BaseBlockController"
+	>
+
+	<forms:SimpleForm labelSpanL="4" labelSpanM="4"
+					  labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+					  maxContainerCols="2" layout="ResponsiveLayout" width="100%">
+		<core:Title text="{i18n>view.profile.block.social.header}"/>
+		<List items="{SocialAccounts}" showSeparators="Inner">
+			<CustomListItem>
+				<layout:VerticalLayout width="100%">
+					<Label text="{Name}"/>
+					<layout:HorizontalLayout>
+						<Image
+							class="sapUiSmallMarginEnd" 
+							src="{path: 'Image', formatter: '.getUrl'}"
+							width="21px"/>
+						<Link text="{Address}" href="{path: 'Link', formatter: '.getUrl'}" target="_blank"/>
+					</layout:HorizontalLayout>
+				</layout:VerticalLayout>
+			</CustomListItem>
+		</List>
+	</forms:SimpleForm>
+</mvc:View>

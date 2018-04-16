@@ -1,0 +1,125 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m"
+		   xmlns:semantic="sap.m.semantic"
+		   xmlns:forms="sap.ui.layout.form"
+		   controllerName="de.tammenit.ui5.homepage.controller.Print" height="100%">
+	<!--
+		   xmlns:sample="sap.uxap.sample.ObjectPageOnJSON"
+		   xmlns:goals="sap.uxap.sample.SharedBlocks.goals"
+		   xmlns:employment="sap.uxap.sample.SharedBlocks.employment"
+	-->
+	<semantic:FullscreenPage title="{i18n>appTitle}" showNavButton="true" navButtonPress="onNavBack" showFooter="false">
+		<semantic:content>
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true"
+							  showEditHeaderButton="false"
+							  editHeaderButtonPress="handleEditBtnPress">
+				<headerTitle>
+					<ObjectPageHeader objectImageURI="{path: 'Image', formatter: '.getUrl'}" objectTitle="{Name}"
+									  objectImageShape="Circle" objectImageAlt="{Name}"
+									  objectSubtitle="{JobTitle}" isObjectIconAlwaysVisible="false"
+									  isObjectTitleAlwaysVisible="false"
+									  isObjectSubtitleAlwaysVisible="false"></ObjectPageHeader>
+				</headerTitle>
+				<headerContent>
+					<core:Fragment fragmentName="de.tammenit.ui5.homepage.view.fragments.HeaderContent" type="XML"/>
+				</headerContent>
+				<sections>
+					<ObjectPageSection>
+						<subSections>
+							<ObjectPageSubSection title="{i18n>view.print.section.header}">
+								<m:VBox>
+									<m:HBox>
+										<m:items>
+											<m:GenericTile
+													class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout pdfTile"
+													header="{i18n>view.profile.print.tile.fullpdf.header}"
+													subheader="{i18n>view.profile.print.tile.fullpdf.subheader}"
+													headerImage="{path: 'imgModel>/pdfFull', formatter: '.getUrl'}"
+													press="onPressFullPDF">
+												<m:tileContent>
+													<m:TileContent unit="~ 17 pages">
+														<m:content>
+														</m:content>
+													</m:TileContent>
+												</m:tileContent>
+											</m:GenericTile>
+											<m:GenericTile
+													class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout pdfTile"
+													header="{i18n>view.profile.print.tile.anonympdf.header}"
+													subheader="{i18n>view.profile.print.tile.anonympdf.subheader}"
+													headerImage="{path: 'imgModel>/pdfFull', formatter: '.getUrl'}"
+													state="Disabled"
+													press="onPressAnonymousPDF">
+												<m:tileContent>
+													<m:TileContent unit="~ 14 pages">
+														<m:content>
+														</m:content>
+													</m:TileContent>
+												</m:tileContent>
+											</m:GenericTile>
+											<m:GenericTile
+													class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout pdfTile"
+													header="{i18n>view.profile.print.tile.projects.header}"
+													subheader="{i18n>view.profile.print.tile.projects.subheader}"
+													headerImage="{path: 'imgModel>/projects', formatter: '.getUrl'}"
+													state="Disabled"
+													press="onPressAnonymousPDF">
+												<m:tileContent>
+													<m:TileContent unit="~ 10 pages">
+														<m:content>
+														</m:content>
+													</m:TileContent>
+												</m:tileContent>
+											</m:GenericTile>
+										</m:items>
+									</m:HBox>
+									<m:Text text="{i18n>view.profile.print.notification}"/>
+								</m:VBox>
+								<!--
+								<forms:Form width="100%">
+									<forms:layout>
+										<forms:ResponsiveGridLayout/>
+									</forms:layout>
+									<forms:FormContainer id="generalInfo" title="General">
+										<forms:formElements>
+											<forms:FormElement label="Location">
+												<forms:fields>
+													<m:Input
+															enabled="true"
+															placeholder="Enter the location (city) of the business trip"
+															value="{path: 'Location'}"
+															showSuggestion="true"
+															suggestionItems="{vh>/locations}"
+													>
+														<m:suggestionItems>
+															<core:ListItem text="{vh>text}"  additionalText="{vh>key}" />
+														</m:suggestionItems>
+													</m:Input>
+												</forms:fields>
+											</forms:FormElement>
+										</forms:formElements>
+										<forms:formElements>
+											<forms:FormElement label="Customer">
+												<forms:fields>
+													<m:ComboBox
+															placeholder="Enter Customer you visited..."
+															enabled="true"
+															editable="true"
+															selectedKey="{path: 'Customer'}"
+															items="{vh>/customers}"
+													>
+														<core:Item key="{vh>text}" text="{vh>text}" />
+													</m:ComboBox>
+												</forms:fields>
+											</forms:FormElement>
+										</forms:formElements>
+									</forms:FormContainer>
+								</forms:Form>
+								-->
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</semantic:content>
+	</semantic:FullscreenPage>
+</core:View>

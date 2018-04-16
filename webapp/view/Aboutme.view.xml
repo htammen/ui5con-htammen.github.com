@@ -1,0 +1,159 @@
+<core:View xmlns:core="sap.ui.core"
+		   xmlns="sap.uxap"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   xmlns:general="de.tammenit.ui5.homepage.view.SharedBlocks.general"
+		   xmlns:personal="de.tammenit.ui5.homepage.view.SharedBlocks.personal"
+		   xmlns:priority="de.tammenit.ui5.homepage.view.SharedBlocks.priorities"
+		   xmlns:service="de.tammenit.ui5.homepage.view.SharedBlocks.services"
+		   xmlns:language="de.tammenit.ui5.homepage.view.SharedBlocks.languages"
+		   xmlns:branch="de.tammenit.ui5.homepage.view.SharedBlocks.branches"
+		   xmlns:itskills="de.tammenit.ui5.homepage.view.SharedBlocks.itskills"
+		   xmlns:certificates="de.tammenit.ui5.homepage.view.SharedBlocks.certificates"
+		   xmlns:trainings="de.tammenit.ui5.homepage.view.SharedBlocks.trainings"
+		   controllerName="de.tammenit.ui5.homepage.controller.Aboutme"
+		   height="100%">
+	<m:Page title="{i18n>appTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<m:content>
+			<ObjectPageLayout id="ObjectPageLayout"
+							  enableLazyLoading="false"
+							  showTitleInHeaderContent="true"
+							  showEditHeaderButton="false"
+							  editHeaderButtonPress="handleEditBtnPress">
+				<headerTitle>
+					<ObjectPageHeader objectImageURI="{path: 'Image', formatter: '.getUrl'}"
+									  objectTitle="{Name}"
+									  objectImageShape="Circle"
+									  objectImageAlt="{Name}"
+									  objectSubtitle="{JobTitle}"
+									  isObjectIconAlwaysVisible="false"
+									  isObjectTitleAlwaysVisible="false"
+									  isObjectSubtitleAlwaysVisible="false">
+						<!--
+						<actions>
+							<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" 
+								type="Emphasized"
+								tooltip="{i18n>view.profile.downloadpdf.tooltip}"
+								press="downloadProfile"/>
+						</actions>
+						-->
+					</ObjectPageHeader>
+				</headerTitle>
+		 
+				<headerContent>
+					<core:Fragment fragmentName="de.tammenit.ui5.homepage.view.fragments.HeaderContent" type="XML" />
+				</headerContent>
+		 
+				<sections>
+					<ObjectPageSection title="{i18n>view.profile.personal}">
+						<subSections>
+							<ObjectPageSubSection title="{i18n>view.profile.connect}">
+								<blocks>
+									<personal:BlockPhoneNumber id="phone"/>
+									<personal:BlockSocial id="social"/>
+									<personal:BlockAdresses id="adresses"/>
+									<personal:BlockMailing id="mailing" columnLayout="1"/>
+								</blocks>
+							</ObjectPageSubSection>
+		 
+							<ObjectPageSubSection title="{i18n>view.profile.general_data}">
+								<blocks>
+									<personal:PersonalBlockGeneralData id="part1" columnLayout="3"/>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+		 
+					<ObjectPageSection title="{i18n>view.profile.general_job_info}">
+						<subSections>
+							<ObjectPageSubSection title="{i18n>view.profile.experience}">
+								<blocks>
+									<general:BlockGeneral id="general" columnLayout="3"/>
+								</blocks>
+							</ObjectPageSubSection>
+
+							<ObjectPageSubSection title="{i18n>view.profile.services}">
+								<blocks>
+									<service:BlockServices id="services">
+										<service:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Services" internalModelName="model" />
+										</service:mappings>
+									</service:BlockServices>
+								</blocks>
+							</ObjectPageSubSection>
+
+							<ObjectPageSubSection title="{i18n>view.profile.priorities}">
+								<blocks>
+									<priority:BlockPriorities id="priorities">
+										<priority:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Priorities" internalModelName="model" />
+										</priority:mappings>
+									</priority:BlockPriorities>
+								</blocks>
+							</ObjectPageSubSection>
+
+							<ObjectPageSubSection title="{i18n>view.profile.languages}">
+								<blocks>
+									<language:BlockLanguages id="languages">
+										<language:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Languages" internalModelName="model" />
+										</language:mappings>
+									</language:BlockLanguages>
+								</blocks>
+							</ObjectPageSubSection>
+		 
+							<ObjectPageSubSection title="{i18n>view.profile.branches}">
+								<blocks>
+									<branch:BlockBranches id="branches">
+										<branch:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Branches" internalModelName="model" />
+										</branch:mappings>
+									</branch:BlockBranches>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+
+					<ObjectPageSection title="{i18n>view.profile.itskills}" subSections="{ITSkills}">
+						<subSections>
+							<ObjectPageSubSection title="{path: 'Name', formatter: '.getCurrentLangValue'}">
+								<blocks>
+									<itskills:BlockITSkills id="itskills">
+										<itskills:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="items" internalModelName="model" />
+										</itskills:mappings>
+									</itskills:BlockITSkills>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+
+					<ObjectPageSection title="{i18n>view.profile.certificates_and_trainings}">
+						<subSections>
+							<ObjectPageSubSection title="{i18n>view.profile.certificates}">
+								<blocks>
+									<certificates:BlockCertificates id="certificates">
+										<certificates:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Certificates" internalModelName="model" />
+										</certificates:mappings>
+									</certificates:BlockCertificates>
+								</blocks>
+							</ObjectPageSubSection>
+
+							<ObjectPageSubSection title="{i18n>view.profile.trainings}">
+								<blocks>
+									<trainings:BlockTrainings id="trainings">
+										<trainings:mappings>
+											<ModelMapping externalModelName="undefined" externalPath="Trainings" internalModelName="model" />
+										</trainings:mappings>
+									</trainings:BlockTrainings>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+
+				</sections>
+			</ObjectPageLayout>
+		</m:content>
+	</m:Page>
+</core:View>

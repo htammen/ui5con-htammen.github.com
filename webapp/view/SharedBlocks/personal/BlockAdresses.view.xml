@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+		  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+		<core:Title text="{i18n>view.profile.block.addresses.header}"></core:Title>
+		<Label text="{i18n>view.profile.block.addresses.work}"/>
+		<layout:VerticalLayout>
+			<Text text="{Addresses/WorkAddress/Street} {Addresses/WorkAddress/Housenum}"/>
+			<Text text="{Addresses/WorkAddress/Zipcode} {Addresses/WorkAddress/City}"/>
+			<Text text="{Addresses/WorkAddress/Country}"/>
+		</layout:VerticalLayout>
+		<Label text="{i18n>view.profile.block.addresses.home}"/>
+		<layout:VerticalLayout>
+			<Text text="{Addresses/HomeAddress/Street} {Addresses/HomeAddress/Housenum}"/>
+			<Text text="{Addresses/HomeAddress/Zipcode} {Addresses/HomeAddress/City}"/>
+			<Text text="{Addresses/HomeAddress/Country}"/>
+		</layout:VerticalLayout>
+	</forms:SimpleForm>
+</mvc:View>

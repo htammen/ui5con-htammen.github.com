@@ -1,0 +1,51 @@
+<mvc:View
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		controllerName="de.tammenit.ui5.homepage.controller.SharedBlocks.certificates.Certificate">
+
+	<Table id="idCertificatesTable"
+		inset="false"
+		items="{model>}">
+		<headerToolbar>
+		</headerToolbar>
+		<columns>
+			<Column width="6em">
+				<Text text="{i18n>view.profile.block.certificate.column.date}" />
+			</Column>
+			<Column
+				minScreenWidth="2048px"
+				demandPopin="true">
+				<Text text="{i18n>view.profile.block.certificate.column.name}" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="{i18n>view.profile.block.certificate.column.institute}" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>view.profile.block.certificate.column.certificate}" />
+			</Column>
+			<Column
+				hAlign="Right">
+				<Text text="{i18n>view.profile.block.certificate.column.rating}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier title="{path: 'model>Date', formatter: '.formatDate'}"/>
+					<Link text="{model>Text}" href="{path: 'model>Link', formatter: '.getUrl'}" target="_blank"/>
+					<Text text="{model>Institute}" />
+					<CheckBox editable="false" selected="{= ${model>Certificate} === 1}" />	
+					<ObjectNumber
+						number="{model>Rating}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

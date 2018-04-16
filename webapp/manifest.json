@@ -1,0 +1,168 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "de.tammenit.ui5.homepage",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{aa}}",
+		"resources": "resources.json",
+		"ach": "ach",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				},
+				"uri": "localService/metadata.xml"
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "de.tammenit.ui5.homepage.view.Home",
+			"type": "XML"
+		},
+		"resourceRoots": {
+			"com.penninkhof.controls": "./bower_components/ui5-qrcode/control"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "de.tammenit.ui5.homepage.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"pdfModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "de.tammenit.ui5.homepage.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": ["notFound"]
+				},
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "home",
+				"target": ["home"]
+			}, {
+				"name": "aboutme",
+				"pattern": "aboutme",
+				"greedy": false,
+				"target": ["aboutme"]
+			}, {
+				"name": "projects",
+				"pattern": "projects",
+				"greedy": false,
+				"target": ["projects"]
+			}, {
+				"name": "pdf",
+				"pattern": "pdf",
+				"greedy": false,
+				"target": ["pdf"]
+			}, {
+				"name": "print",
+				"pattern": "print",
+				"greedy": false,
+				"target": ["print"]
+			}],
+			"targets": {
+				"home": {
+					"viewName": "Home",
+					"viewId": "home",
+					"viewLevel": 1
+				},
+				"aboutme": {
+					"viewName": "Aboutme",
+					"viewId": "aboutme",
+					"viewLevel": 2
+				},
+				"projects": {
+					"viewName": "Projects",
+					"viewId": "projects",
+					"viewLevel": 2
+				},
+				"pdf": {
+					"viewName": "PDF",
+					"viewId": "pdf",
+					"viewLevel": 2
+				},
+				"print": {
+					"viewName": "Print",
+					"viewId": "print",
+					"viewLevel": 2
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewId": "notFound"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}],
+			"js": [
+				{
+					"uri": "js/colorbrewer.js"
+				},
+				{
+					"uri": "bower_components/pdfmake/build/pdfmake.min.js"
+				},
+				{
+					"uri": "bower_components/pdfmake/build/vfs_fonts.js"
+				}
+			]
+		}
+	}
+}

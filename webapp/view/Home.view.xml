@@ -1,0 +1,112 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+		  xmlns:semantic="sap.m.semantic"
+	controllerName="de.tammenit.ui5.homepage.controller.Home">
+	<App id="app">
+		<pages>
+			<semantic:FullscreenPage title="{i18n>view.home.page.title}"
+				busy="{viewModel>/busy}"
+				busyIndicatorDelay="{viewModel>/delay}">
+				<semantic:content>
+					<FlexBox 
+						wrap="Wrap"
+						alignItems="Center"
+						justifyContent="Center">
+						<SlideTile  class="sapUiSmallMargin" displayTime="7000">
+							<tiles>
+								<GenericTile header="{Name}"
+									frameType="TwoByOne"
+									headerImage="sap-icon://hint"
+									size="L"
+									>
+									<tileContent>
+										<TileContent>
+											<content>
+												<NewsContent contentText="{parts: [
+													'Name',
+													'Availability',
+													'Addresses/HomeAddress/Zipcode',
+													'Addresses/HomeAddress/City',
+													'Phone/Mobile',
+													'Slogan'
+													], formatter: '.formatter.persContentFormatter'}"/>
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+								<GenericTile header="{i18n>view.home.slider1.slide1.header}"
+									frameType="TwoByOne"
+									headerImage="sap-icon://hint"
+									size="L"
+									>
+									<tileContent>
+										<TileContent frameType="TwoByOne">
+											<content>
+												  <Text text="{i18n>view.home.slider1.slide1.text}"/>  
+												<!-- <NewsContent contentText="{i18n>view.home.slider1.slide1.text}"/> -->
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+								<GenericTile header="{i18n>view.home.slider1.slide2.header}"
+									frameType="TwoByOne"
+									headerImage="sap-icon://hint"
+									size="L"
+									>
+									<tileContent>
+										<TileContent>
+											<content>
+												<NewsContent contentText="{i18n>view.home.slider1.slide2.text}"/>
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+								<GenericTile header="{i18n>view.home.slider1.slide3.header}"
+									frameType="TwoByOne"
+									headerImage="sap-icon://hint"
+									size="L"
+									>
+									<tileContent>
+										<TileContent>
+											<content>
+												<NewsContent contentText="{i18n>view.home.slider1.slide3.text}"/>
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+							</tiles>
+						</SlideTile>
+						<SlideTile  class="sapUiSmallMargin" displayTime="7000">
+							<tiles>
+								<GenericTile class="picture1" frameType="TwoByOne"/>
+								<GenericTile class="picture2" frameType="TwoByOne"/>
+								<GenericTile class="picture3" frameType="TwoByOne"/>
+								<GenericTile class="picture4" frameType="TwoByOne"/>
+							</tiles>
+						</SlideTile>
+					</FlexBox>
+					<TileContainer height="60%" editable="false" allowAdd="false" id="__container0">
+						<tiles>
+							<StandardTile title="{i18n>view.home.tile.aboutme}" info="{i18n>view.home.tile.aboutme.info}" icon="sap-icon://customer"
+								press="showAboutMe" removable="false"/>
+							<StandardTile title="{i18n>view.home.tile.projects}" info="{i18n>view.home.tile.projects.info}"
+								icon="sap-icon://work-history" removable="false"
+								press="showProjects"/>
+							<StandardTile title="{i18n>view.home.tile.customers}" info="{i18n>view.home.tile.customers.info}"
+								icon="sap-icon://work-history" removable="false"
+								press="comingNext"/>
+							<StandardTile title="{i18n>view.home.tile.pdf}" info="{i18n>view.home.tile.pdf.info}"
+								icon="sap-icon://pdf-attachment" removable="false"
+								press="showPDFDownload" number="{= ${pdfs>/pdfs}.length}"/>
+							<StandardTile title="{i18n>view.home.tile.print}" info="{i18n>view.home.tile.print.info}"
+										  icon="sap-icon://print" removable="false"
+										  press="showPrintView"/>
+						</tiles>
+					</TileContainer>
+				</semantic:content>
+				<semantic:customShareMenuContent>
+					<Button icon="sap-icon://bar-code" press="onQRCode"/>
+				</semantic:customShareMenuContent>
+			</semantic:FullscreenPage>
+		</pages>
+	</App>
+</mvc:View>

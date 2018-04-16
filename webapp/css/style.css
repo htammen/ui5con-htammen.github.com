@@ -1,0 +1,50 @@
+/* Enter your custom styles here */
+
+.projectfontlarge {
+	font-size: 24px;
+}
+
+.picture1 {
+	background-image: url(../images/Helmut_2_1.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.picture2 {
+	background-image: url(../images/helmut_sdn3.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.picture3 {
+	background-image: url(../images/helmut_gruen.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.picture4 {
+	background-image: url(../images/helmut2.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* draw a bullet point before each graduation entry */
+.graduation:before {
+	content: "• ";
+}
+
+/* background image of tile at print page always covers the complete tile, resp. is adjusted to the tile size */
+.pdfTile {
+	background-size: cover;
+	border-radius: 10px;
+	background-color: aliceblue;
+}
+.pdfTile:hover {
+	background-size: cover;
+	border-radius: 10px;
+	background-color: aquamarine;
+}

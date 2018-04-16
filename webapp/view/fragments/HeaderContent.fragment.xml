@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+		xmlns:m="sap.m"
+		xmlns:layout="sap.ui.layout"
+		xmlns:core="sap.ui.core">
+
+	<layout:VerticalLayout class="sapUiMediumMarginTop">
+		<m:Label text="{headerModel>/title}" design="Bold" class="projectfontlarge"/>
+	</layout:VerticalLayout>
+
+	<layout:VerticalLayout>
+		<m:Link text="{Phone/Mobile}"/>
+		<m:Link text="{Email/Work}" href="{path: 'Email/Work', formatter: '.formatEmailLink'}"/>
+	</layout:VerticalLayout>
+
+	<layout:VerticalLayout>
+		<m:HBox>
+			<m:Label text="{i18n>view.profile.residence}" class="sapUiSmallMarginEnd"/>
+			<m:Label text="{Addresses/WorkAddress/City}, {Addresses/WorkAddress/Country}"/>
+		</m:HBox>
+		<m:HBox>
+			<m:Label text="{i18n>view.profile.availability}" class="sapUiSmallMarginEnd"/>
+			<m:Label text="{Availability}"/>
+		</m:HBox>
+		<m:HBox>
+			<m:Label text="{i18n>view.profile.regions}" class="sapUiSmallMarginEnd"/>
+			<m:Label text="{Regions}"/>
+		</m:HBox>
+	</layout:VerticalLayout>
+</core:FragmentDefinition>

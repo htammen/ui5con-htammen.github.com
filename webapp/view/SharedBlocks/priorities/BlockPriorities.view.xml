@@ -1,0 +1,22 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+		  xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+		<l:Grid content="{model>}" defaultSpan="L3 M6 S12">
+			<l:content>
+				<VBox alignItems="Start">
+					<Label text="{model>Name}" design="{= ${model>Rating} === 1 ? 'Bold': 'Standard'}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+
+	</forms:SimpleForm>
+</mvc:View>
