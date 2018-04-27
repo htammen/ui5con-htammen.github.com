@@ -2,9 +2,9 @@ const	express = require('express'),
 		port = process.argv[2] || 8080,
 		app = express();
 
-app.use('/webapp', express.static('webapp'));
+app.use('/', express.static('.'));
 app.get('/', function(req, res){
-	res.redirect('/webapp/index.html');;
+	res.redirect('/index.html');;
 });
 
 app.listen(port, function () {
