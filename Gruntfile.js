@@ -116,7 +116,8 @@ module.exports = function (grunt) {
                             '**/*.json',
                             '**/*.properties',
                             '**/*.view.xml',
-							'!localService/**'
+                            '!localService/**',
+                            '!Component-preload.js'
                         ]
                     },
 					dest:'<%= componentFolder %>',

@@ -7,12 +7,10 @@
 
 		<title>Homepage</title>
 
-<!-- PWA related meta tag:  -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- use preload = async -->
 		<script id="sap-ui-bootstrap"
 			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
+			data-sap-ui-libs="sap.m, sap.ui.layout, sap.ui.core, sap.uxap"
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-preload="async"
@@ -20,6 +18,7 @@
 		</script>
 
 		<script>
+      // because of preload = async we have to use the attachInit event
 			sap.ui.getCore().attachInit(function() {
 				sap.ui.require(["sap/ui/core/ComponentContainer"], function(ComponentContainer) {
 
